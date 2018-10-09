@@ -22,7 +22,8 @@ const createTestsFromFeature = parsedFeature => {
       shouldProceedCurrentStep(section.tags)
   );
 
-  describe(parsedFeature.feature.name, function () {
+  // eslint-disable-next-line prefer-arrow-callback
+  describe(parsedFeature.feature.name, function() {
     if (featureShouldRun || scenariosHaveTags) {
       const backgroundSection = parsedFeature.feature.children.find(
         section => section.type === "Background"
