@@ -15,7 +15,7 @@ const createTestsFromFeature = parsedFeature => {
     }
   }
 
-  const scenariosHaveTags = parsedFeature.feature.children.some(
+  const taggedScenarioShouldRun = parsedFeature.feature.children.some(
     section =>
       section.tags &&
       section.tags.length &&
@@ -24,7 +24,7 @@ const createTestsFromFeature = parsedFeature => {
 
   // eslint-disable-next-line prefer-arrow-callback
   describe(parsedFeature.feature.name, function() {
-    if (featureShouldRun || scenariosHaveTags) {
+    if (featureShouldRun || taggedScenarioShouldRun) {
       const backgroundSection = parsedFeature.feature.children.find(
         section => section.type === "Background"
       );
