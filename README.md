@@ -110,7 +110,7 @@ Then("counter equals {int}", value => {
 });
 ```
 
-```
+```gherkin
 Feature: Background Section
   
    Background:
