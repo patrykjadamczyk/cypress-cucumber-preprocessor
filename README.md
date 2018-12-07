@@ -2,7 +2,7 @@
 [![CircleCI](https://circleci.com/gh/TheBrainFamily/cypress-cucumber-preprocessor.svg?style=shield)](https://circleci.com/gh/TheBrainFamily/cypress-cucumber-preprocessor)
 # Run cucumber/gherkin-syntaxed specs with cypress.io
 
-Follow the Setup steps, or if you prefer to hack on a working example, take a look [https://github.com/TheBrainFamily/cypress-cucumber-example](https://github.com/TheBrainFamily/cypress-cucumber-example
+Follow the Setup steps, or if you prefer to hack on a working example, take a look at [https://github.com/TheBrainFamily/cypress-cucumber-example](https://github.com/TheBrainFamily/cypress-cucumber-example
 )
 
 ## Setup
@@ -33,6 +33,7 @@ Step definition files are by default in: cypress/support/step_definitions. If yo
   }
 ```
 
+## Usage
 ### Feature files
 
 Put your feature files in cypress/integration/
