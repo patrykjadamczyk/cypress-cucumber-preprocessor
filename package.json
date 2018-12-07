@@ -2,7 +2,7 @@
   "name": "cypress-cucumber-preprocessor",
   "version": "0.0.0-development",
   "description": "Run gherkin-syntaxed specs with cypress.io",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "eslint . && jest && cypress run",
     "fixStyle": "eslint . --fix",
@@ -63,6 +63,6 @@
     "semantic-release": "^15.12.3"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/setupTestFramework.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTestFramework.js"
   }
 }
