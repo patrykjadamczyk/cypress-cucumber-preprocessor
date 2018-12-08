@@ -2,7 +2,7 @@
 [![CircleCI](https://circleci.com/gh/TheBrainFamily/cypress-cucumber-preprocessor.svg?style=shield)](https://circleci.com/gh/TheBrainFamily/cypress-cucumber-preprocessor)
 # Run cucumber/gherkin-syntaxed specs with cypress.io
 
-Follow the Setup steps, or if you prefer to hack on a working example, take a look [https://github.com/TheBrainFamily/cypress-cucumber-example](https://github.com/TheBrainFamily/cypress-cucumber-example
+Follow the Setup steps, or if you prefer to hack on a working example, take a look at [https://github.com/TheBrainFamily/cypress-cucumber-example](https://github.com/TheBrainFamily/cypress-cucumber-example
 )
 
 ## Setup
@@ -34,11 +34,14 @@ Example: cypress/integration/Google.feature
 Feature: The Facebook
 
   I want to open a social network page
-
+  
+  @focus
   Scenario: Opening a social network page
     Given I open Google page
     Then I see "google" in the title
 ```
+
+(the @focus tag is not necessary, but we want to you to notice it so you look it up below. It will speed up your workflow significantly!)
 
 ### Step definitions
 
@@ -223,6 +226,33 @@ In order to initialize tests using tags you will have to run cypress and pass TA
 
 Example:
   ```cypress run -e TAGS='not @foo and (@bar or @zap)'```
+
+### Smart tagging
+Start your tests without setting any tags. And then put a @focus on the scenario (or scenarios) you want to focus on while development or bug fixing.
+
+For example:
+```gherkin
+Feature: Smart Tagging
+
+  As a cucumber cypress plugin which handles Tags
+  I want to allow people to select tests to run if focused
+  So they can work more efficiently and have a shorter feedback loop
+
+  Scenario: This scenario should not run if @focus is on another scenario
+    Then this unfocused scenario should not run
+
+  @focus
+  Scenario: This scenario is focused and should run
+    Then this focused scenario should run
+
+  @this-tag-affects-nothing
+  Scenario: This scenario should also not run
+    Then this unfocused scenario should not run
+
+  @focus
+  Scenario: This scenario is also focused and also should run
+    Then this focused scenario should run
+```
 
 ## Custom Parameter Type Resolves
 
