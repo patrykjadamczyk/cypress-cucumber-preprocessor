@@ -41,7 +41,7 @@ Feature: The Facebook
     Then I see "google" in the title
 ```
 
-(the @focus tag is not necessary, but we want to you to notice it so you look it up below. It will speed up your workflow significantly!)
+(the @focus tag is not necessary, but we want to you to notice it so you look it up below. *It will speed up your workflow significantly*!)
 
 ### Step definitions
 
@@ -96,7 +96,7 @@ The problem with the legacy structure is that everything is global. This is prob
 - It makes it harder to create .feature files that read nicely - you have to make sure you are not stepping on toes of already existing step definitions. You should be able to write your tests without worrying about reusability, complex regexp matches, or anything like that. Just write a story. Explain what you want to see without getting into the details. Reuse in the .js files, not in something you should consider an always up-to-date, human-readable documentation.
 - The startup times get much worse - because we have to analyze all the different step definitions so we can match the .feature files to the test.
 - Hooks are problematic. If you put before() in a step definition file, you might think that it will run only for the .feature file related to that step definition. You try the feature you work on, everything seems fine and you push the code. Here comes a surprise - it will run for ALL .feature files in your whole project. Very unintuitive. And good luck debugging problems caused by that! This problem was not unique to this plugin, bo to the way cucumberjs operates. 
- Let's look how this differs with the proposed structure. Assuming you want to have a hook before ./Google.feature file, just create a ./Google/before.js and put the hook there. This should take care of long requested feature - (https://github.com/TheBrainFamily/cypress-cucumber-preprocessor/issues/25)[#25]
+ Let's look how this differs with the proposed structure. Assuming you want to have a hook before ./Google.feature file, just create a ./Google/before.js and put the hook there. This should take care of long requested feature - [https://github.com/TheBrainFamily/cypress-cucumber-preprocessor/issues/25](#25)
 
 If you have a few tests the "oldschool" style is completely fine. But for a large enterprise-grade application, with hundreds or sometimes thousands of .feature files, the fact that everything is global becomes a maintainability nightmare. 
 
