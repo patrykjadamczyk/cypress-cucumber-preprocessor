@@ -51,7 +51,7 @@
     "cucumber-expressions": "^6.0.1",
     "cucumber-tag-expressions": "^1.1.1",
     "debug": "^3.0.1",
-    "gherkin": "^5.1.0",
+    "gherkin": "^8.2.1",
     "glob": "^7.1.2",
     "js-string-escape": "^1.0.1",
     "minimist": "^1.2.0",
